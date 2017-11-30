@@ -79,10 +79,6 @@ case class NamerdInterpreterConfig(
       case e: Failure if e.isFlagged(Failure.Interrupted) => true
     }
 
-    val monitor = Monitor.mk {
-      case e: Failure if e.isFlagged(Failure.Interrupted) => true
-    }
-
     val param.Stats(stats0) = params[param.Stats]
     val stats = stats0.scope(label)
 
